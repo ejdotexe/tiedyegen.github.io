@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tie-Dye Generator</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+
+<!-- PWA Manifest -->
+<link rel="manifest" href="/manifest.json">
+
+<!-- Theme color for browser UI -->
+<meta name="theme-color" content="#1a1a1a">
+
+<!-- iOS Support -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Tie-Dye Gen">
+<link rel="apple-touch-icon" href="/icon-192.png">
+
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <h1>Tie-Dye Generator</h1>
+            <div class="workflow-indicator">
+                <span class="step active" data-step="fold">1. Fold</span>
+                <span class="step" data-step="dye">2. Dye</span>
+                <span class="step" data-step="unfold">3. Unfold</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="app-main">
+            <!-- Canvas Area -->
+            <section class="canvas-section">
+                <canvas id="tshirt-canvas"></canvas>
+                <div class="canvas-overlay" id="canvas-overlay"></div>
+            </section>
+
+            <!-- Control Panel -->
+            <aside class="control-panel">
+                <!-- Fold Controls -->
+                <div class="control-group" id="fold-controls">
+                    <h2>Folding</h2>
+                    <div class="tool-group">
+                        <button class="tool-btn" data-fold="accordion">Accordion</button>
+                        <button class="tool-btn" data-fold="spiral">Spiral</button>
+                        <button class="tool-btn" data-fold="crumple">Crumple</button>
+                        <button class="tool-btn" data-fold="diagonal">Diagonal</button>
+                    </div>
+                    <div class="action-group">
+                        <button id="undo-fold">Undo</button>
+                        <button id="redo-fold">Redo</button>
+                        <button id="clear-folds">Clear All</button>
+                    </div>
+                </div>
+
+                <!-- Dye Controls -->
+                <div class="control-group hidden" id="dye-controls">
+                    <h2>Dyeing</h2>
+                    <div class="color-picker-container">
+                        <input type="color" id="dye-color" value="#ff0000">
+                        <div class="preset-colors" id="preset-colors"></div>
+                    </div>
+                    <div class="dye-settings">
+                        <label>
+                            Intensity
+                            <input type="range" id="dye-intensity" min="1" max="100" value="50">
+                        </label>
+                        <label>
+                            Brush Size
+                            <input type="range" id="brush-size" min="5" max="50" value="20">
+                        </label>
+                    </div>
+                    <button id="clear-dye">Clear Dye</button>
+                </div>
+
+                <!-- Unfold Controls -->
+                <div class="control-group hidden" id="unfold-controls">
+                    <h2>Result</h2>
+                    <button id="unfold-btn" class="primary-btn">Unfold Shirt</button>
+                    <button id="reset-btn">Start Over</button>
+                    <button id="save-btn">Save Pattern</button>
+                </div>
+
+                <!-- Navigation -->
+                <div class="phase-navigation">
+                    <button id="prev-phase" disabled>← Previous</button>
+                    <button id="next-phase">Next →</button>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/config/constants.js"></script>
+    <script type="module" src="js/modules/utils.js"></script>
+    <script type="module" src="js/modules/TShirtCanvas.js"></script>
+    <script type="module" src="js/modules/FoldingEngine.js"></script>
+    <script type="module" src="js/modules/ColorManager.js"></script>
+    <script type="module" src="js/modules/DyePhysics.js"></script>
+    <script type="module" src="js/modules/PatternGenerator.js"></script>
+    <script type="module" src="js/modules/UIController.js"></script>
+    <script type="module" src="js/main.js"></script>
+
+<!-- Register Service Worker -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(reg => console.log('Service Worker registered!', reg))
+        .catch(err => console.log('Service Worker registration failed:', err));
+    });
+  }
+</script>
+</body>
+</html>
