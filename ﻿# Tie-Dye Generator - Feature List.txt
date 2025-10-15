@@ -1,0 +1,103 @@
+﻿# Tie-Dye Generator - Feature List
+
+## Required Features (MVP)
+
+### Core Functionality
+- **Visual T-Shirt Representation**: 3D or detailed 2D shirt canvas that can be manipulated
+- **Folding Transformations**: 
+  - Basic folds (accordion, spiral, crumple)
+  - Visual feedback showing fold lines and layers
+  - Undo/redo folding operations
+- **Dye Application System**:
+  - Color picker with realistic dye colors
+  - Brush/dropper tools for applying dye
+  - Multiple dye application points
+- **Dye Physics Simulation**:
+  - Realistic saturation based on fabric layers
+  - Color bleeding and mixing
+  - Time-based absorption effects
+- **Unfold Mechanism**: 
+  - Animated unfolding process
+  - Final pattern reveal
+  - Pattern accuracy based on fold geometry
+
+### User Interface
+- Clean, intuitive control panel
+- Step-by-step workflow (fold → dye → unfold)
+- Real-time preview during each phase
+- Basic save/load functionality
+
+### Technical Requirements
+- Modular file structure
+- Responsive design
+- Cross-browser compatibility
+- Performance optimization for real-time rendering
+
+## Future Implementation Features
+
+### Advanced Folding Patterns
+- Mandala/radial folds
+- Complex geometric patterns
+- Custom fold creation tools
+- Fold pattern library/presets
+
+### Enhanced Dye System
+- Different dye types (liquid, powder, ice dye)
+- Realistic drying effects
+- Temperature and time variables
+- Dye concentration controls
+
+### Shirt Customization
+- Multiple shirt types (tank, long-sleeve, hoodie)
+- Different fabric textures
+- Fabric material properties affecting dye absorption
+- Size variations
+
+### Social Features
+- Pattern sharing gallery
+- Export to social media
+- Community pattern library
+- Rating/favorite system
+
+### Advanced Tools
+- Pattern symmetry tools
+- Color harmony suggestions
+- Professional dye recipes
+- Print-ready file export
+
+## Half-Baked Ideas (Needs Full Consideration)
+
+### Augmented Reality Integration
+- **Concept**: Use phone camera to preview patterns on real shirts
+- **Considerations**: Technical complexity, device compatibility, lighting conditions
+- **Decision Needed**: Worth the development investment vs web-only approach?
+
+### Machine Learning Pattern Generation
+- **Concept**: AI suggests patterns based on user preferences
+- **Considerations**: Training data requirements, computational resources, user privacy
+- **Decision Needed**: Focus on simulation accuracy vs AI features?
+
+### Physical Dye Kit Integration
+- **Concept**: Partner with dye manufacturers for real-world kits matching digital designs
+- **Considerations**: Business partnerships, shipping logistics, legal liability
+- **Decision Needed**: Digital-only vs physical product integration?
+
+### Virtual Reality Mode
+- **Concept**: Full 3D VR environment for immersive tie-dye experience
+- **Considerations**: VR adoption rates, development complexity, hardware requirements
+- **Decision Needed**: Web accessibility vs cutting-edge experience?
+
+### Advanced Physics Simulation
+- **Concept**: Full fluid dynamics simulation for ultra-realistic dye behavior
+- **Considerations**: Performance impact, diminishing returns on realism, development time
+- **Decision Needed**: Balance between realism and performance?
+
+### Multi-User Collaborative Sessions
+- **Concept**: Multiple users working on same shirt design in real-time
+- **Considerations**: Server infrastructure, synchronization complexity, use case validity
+- **Decision Needed**: Single-user focus vs collaborative features?
+
+### Professional Designer Tools
+- **Concept**: Advanced tools for commercial tie-dye businesses
+- **Considerations**: Market research needed, pricing model, feature complexity
+- **Decision Needed**: Consumer app vs professional tool positioning?
